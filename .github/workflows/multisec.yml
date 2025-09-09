@@ -26,6 +26,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      # SAST
-        
-      
+      # Iac Scan
+      - name: 'Checkov'
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          soft-fail: false
+          directory: .
+          output-format: 'cli,sarif'
+          output-file-path: 'checkov.sarif'
+          frameworks: 'all'
+          
