@@ -1,4 +1,4 @@
-name: semgrep
+name: Semgrep
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   # schedule:
   # # random HH:MM to avoid a load spike on GitHub Actions at 00:00
   # - cron: 8 12 * * *
-name: Semgrep
+
 jobs:
   semgrep:
     name: semgrep/ci
