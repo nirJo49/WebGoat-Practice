@@ -34,7 +34,7 @@ jobs:
           quiet: true
           output_format: 'cli,sarif'
           output_file_path: 'checkov.sarif'
-          frameworks: 'kubernetes'
+          framework: 'kubernetes'
 
       - name: 'Upload Checkov SARIF'
         uses: actions/upload-artifact@v4
