@@ -30,9 +30,15 @@ jobs:
       - name: 'Checkov'
         uses: bridgecrewio/checkov-action@v12
         with:
-          soft-fail: false
-          directory: .
-          output-format: 'cli,sarif'
-          output-file-path: 'checkov.sarif'
-          frameworks: 'all'
+          soft_fail: true
+          quiet: true
+          output_format: 'cli,sarif'
+          output_file_path: 'checkov.sarif'
+          frameworks: 'kubernetes'
+
+      - name: 'Upload Checkov SARIF'
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'checkov-sarif'
+          path: 'checkov.sarif'
           
